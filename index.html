@@ -3,60 +3,60 @@
 // 记录点击次数
 let clickCount = 0;
 
-// 心心大爆炸动画函数
-function heartExplosion() {
-    // 创建爆炸心心容器
-    const explosionContainer = document.createElement('div');
-    explosionContainer.style.position = 'fixed';
-    explosionContainer.style.left = 0;
-    explosionContainer.style.top = 0;
-    explosionContainer.style.width = '100vw';
-    explosionContainer.style.height = '100vh';
-    explosionContainer.style.pointerEvents = 'none';
-    explosionContainer.style.zIndex = 9999;
+// // 心心大爆炸动画函数
+// function heartExplosion() {
+//     // 创建爆炸心心容器
+//     const explosionContainer = document.createElement('div');
+//     explosionContainer.style.position = 'fixed';
+//     explosionContainer.style.left = 0;
+//     explosionContainer.style.top = 0;
+//     explosionContainer.style.width = '100vw';
+//     explosionContainer.style.height = '100vh';
+//     explosionContainer.style.pointerEvents = 'none';
+//     explosionContainer.style.zIndex = 9999;
 
-    for (let i = 0; i < 50; i++) {
-        const heart = document.createElement('div');
-        heart.innerHTML = `
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="#ff4b69" xmlns="http://www.w3.org/2000/svg">
-                <path d="M23.6,5.3c-2.1,0-4,1.1-5.1,2.8C17.5,6.4,15.6,5.3,13.5,5.3C10,5.3,7,8.3,7,11.8c0,6.1,7.8,12.2,10.7,14.4c0.5,0.4,1.1,0.4,1.6,0C17.2,24,25,17.9,25,11.8C25,8.3,22,5.3,18.5,5.3z"/>
-            </svg>
-        `;
-        heart.style.position = 'absolute';
-        heart.style.left = '50vw';
-        heart.style.top = '50vh';
-        heart.style.transform = `translate(-50%, -50%)`;
+//     for (let i = 0; i < 50; i++) {
+//         const heart = document.createElement('div');
+//         heart.innerHTML = `
+//             <svg width="32" height="32" viewBox="0 0 32 32" fill="#ff4b69" xmlns="http://www.w3.org/2000/svg">
+//                 <path d="M23.6,5.3c-2.1,0-4,1.1-5.1,2.8C17.5,6.4,15.6,5.3,13.5,5.3C10,5.3,7,8.3,7,11.8c0,6.1,7.8,12.2,10.7,14.4c0.5,0.4,1.1,0.4,1.6,0C17.2,24,25,17.9,25,11.8C25,8.3,22,5.3,18.5,5.3z"/>
+//             </svg>
+//         `;
+//         heart.style.position = 'absolute';
+//         heart.style.left = '50vw';
+//         heart.style.top = '50vh';
+//         heart.style.transform = `translate(-50%, -50%)`;
 
-        // 爆炸的随机角度和距离
-        const angle = Math.random() * 2 * Math.PI;
-        const distance = 888 + Math.random() * 222;
-        const x = Math.cos(angle) * distance;
-        const y = Math.sin(angle) * distance;
+//         // 爆炸的随机角度和距离
+//         const angle = Math.random() * 2 * Math.PI;
+//         const distance = 888 + Math.random() * 222;
+//         const x = Math.cos(angle) * distance;
+//         const y = Math.sin(angle) * distance;
 
-        // 动画
-        heart.animate([
-            {
-                opacity: 1,
-                transform: `translate(-50%, -50%) scale(1)`
-            },
-            {
-                opacity: 0,
-                transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) scale(${0.7 + Math.random()})`
-            }
-        ], {
-            duration: 1400 + Math.random()*400,
-            easing: 'cubic-bezier(.52,0,.35,1)',
-            fill: 'forwards'
-        });
+//         // 动画
+//         heart.animate([
+//             {
+//                 opacity: 1,
+//                 transform: `translate(-50%, -50%) scale(1)`
+//             },
+//             {
+//                 opacity: 0,
+//                 transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) scale(${0.7 + Math.random()})`
+//             }
+//         ], {
+//             duration: 1400 + Math.random()*400,
+//             easing: 'cubic-bezier(.52,0,.35,1)',
+//             fill: 'forwards'
+//         });
 
-        explosionContainer.appendChild(heart);
-    }
-    document.body.appendChild(explosionContainer);
+//         explosionContainer.appendChild(heart);
+//     }
+//     document.body.appendChild(explosionContainer);
 
-    setTimeout(() => {
-        explosionContainer.remove();
-    }, 1800);
-}
+//     setTimeout(() => {
+//         explosionContainer.remove();
+//     }, 1800);
+// }
 
 // 页面加载后挂载点击事件
 window.addEventListener('DOMContentLoaded', () => {
